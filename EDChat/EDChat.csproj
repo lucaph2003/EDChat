@@ -113,6 +113,12 @@
     <Compile Include="frmRegistro.Designer.cs">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyuda.Designer.cs">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica\Alumnos.cs" />
     <Compile Include="Logica\Conexion.cs" />
     <Compile Include="Logica\Control.cs" />
@@ -121,6 +127,9 @@
     <Compile Include="Logica\TipoUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAyuda.resx">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInterfaz.resx">
       <DependentUpon>frmInterfaz.cs</DependentUpon>
     </EmbeddedResource>
