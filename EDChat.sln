@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDChat", "EDChat\EDChat.csproj", "{96E9C4B3-3545-41DD-A97C-9105BB32EC07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96E9C4B3-3545-41DD-A97C-9105BB32EC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E9C4B3-3545-41DD-A97C-9105BB32EC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E9C4B3-3545-41DD-A97C-9105BB32EC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E9C4B3-3545-41DD-A97C-9105BB32EC07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C64B3F2-4A15-4127-B16F-40C4EDCA8776}
+	EndGlobalSection
+EndGlobal
