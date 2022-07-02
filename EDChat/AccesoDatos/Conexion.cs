@@ -19,7 +19,7 @@ namespace EDChat.AccesoDatos
             string servidor = "192.168.1.16";
             string puerto = "3306";
             string usuario = "lpodesta22";
-            string password = "Luca-2003";
+            string password = "password";
             string bd = "proyecto";
 
             string cadenaConexion = "server=" + servidor + "; port=" + puerto + "; user id=" + usuario + "; password=" + password + "; database=" + bd;
