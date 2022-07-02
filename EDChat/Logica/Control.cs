@@ -3,84 +3,72 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EDChat.AccesoDatos;
 
 namespace EDChat.Logica
 {
     class Control
     {
-        public string ctrlRegistro(Alumnos alumnos)
+        public string ctrlRegistro(Alumno alumnos)
         {
-            Modelo modelo = new Modelo();
+            //Metodo para verificar que la contrasenia no exista con todos los casos
+            AlumnoBD alumnoBD = new AlumnoBD();
             string respuesta = "";
 
-
-            if (string.IsNullOrEmpty(alumnos.Nombre) || string.IsNullOrEmpty(alumnos.Apellido) || string.IsNullOrEmpty(alumnos.Password) || string.IsNullOrEmpty(alumnos.ConPassword) || string.IsNullOrEmpty(alumnos.Dni))
+            if (string.IsNullOrEmpty(alumnos.Nombre) || string.IsNullOrEmpty(alumnos.Apellido) || string.IsNullOrEmpty(alumnos.Password) || string.IsNullOrEmpty(alumnos.ConPassword) || string.IsNullOrEmpty(alumnos.Ci))
             {
                 respuesta = "Debe llenar todos los campos";
-
-
             }
             else
             {
                 if (alumnos.Password == alumnos.ConPassword)
                 {
-                    if (modelo.existePassword(alumnos.Password))
+                    if (alumnoBD.ExistePassword(alumnos.Password))
                     {
                         respuesta = "Esta contraseña ya esta usada";
-
-
                     }
-
-
                 }
                 else
                 {
                     respuesta = "Las contraseñas no coinciden";
-
                 }
-
-
             }
             return respuesta;
-
         }
 
-        public string ctrlLogin(string dni, string password)
+        public string ctrlLogin(string ci, string password)
         {
-            Modelo modelo = new Modelo();
+            //Metodo para el login, crea la session
+            AlumnoBD alumnoBD = new AlumnoBD();
             string respuesta = "";
-            Alumnos datosAlumnos = null;
+            Alumno datosAlumnos = null;
 
-            if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(ci) || string.IsNullOrEmpty(password))
             {
                 respuesta = "Debe llenar todos los campos";
-
             }
             else
             {
-                datosAlumnos = modelo.porDni(dni);
+                datosAlumnos = alumnoBD.porDni(ci);
 
                 if (datosAlumnos == null)
                 {
                     respuesta = "El usuario no existe";
-
                 }
                 else
                 {
                     if (datosAlumnos.Password != password)
                     {
                         respuesta = "El usuario o la contraseña no coinciden";
-
                     }
                     else
                     {
-
                         Session.id = datosAlumnos.Id;
-                        Session.dni = dni;
+                        Session.ci = ci;
                         Session.nombre = datosAlumnos.Nombre;
-                        Session.id_tipo = datosAlumnos.Id_tipo;
                         Session.apellido = datosAlumnos.Apellido;
-
+                        Session.password = datosAlumnos.Password;
+                        Session.fotoperfil = datosAlumnos.FotoPerfil;
                     }
 
 

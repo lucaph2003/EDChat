@@ -12,6 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Luca\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +49,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Rafiqul-Hassan-Blogger-Chat-2.ico</ApplicationIcon>
+    <ApplicationIcon>Sin título-2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DF6C7DBFEFACFB08C4DAF965791A6BFCEFADCD09</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>EDChat_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -95,46 +127,95 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmInterfaz.cs">
+    <Compile Include="AccesoDatos\AulaBD.cs" />
+    <Compile Include="AccesoDatos\ChatBD.cs" />
+    <Compile Include="Logica\Aula.cs" />
+    <Compile Include="Logica\Chat.cs" />
+    <Compile Include="UI\frmAulas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInterfaz.Designer.cs">
+    <Compile Include="UI\frmAulas.Designer.cs">
+      <DependentUpon>frmAulas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCambioPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCambioPassword.Designer.cs">
+      <DependentUpon>frmCambioPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmChat.Designer.cs">
+      <DependentUpon>frmChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmContactos.Designer.cs">
+      <DependentUpon>frmContactos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmInterfaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmInterfaz.Designer.cs">
       <DependentUpon>frmInterfaz.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="UI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistro.cs">
+    <Compile Include="UI\frmPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistro.Designer.cs">
+    <Compile Include="UI\frmPerfil.Designer.cs">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmRegistro.Designer.cs">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAyuda.cs">
+    <Compile Include="UI\frmAyuda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAyuda.Designer.cs">
+    <Compile Include="UI\frmAyuda.Designer.cs">
       <DependentUpon>frmAyuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logica\Alumnos.cs" />
-    <Compile Include="Logica\Conexion.cs" />
+    <Compile Include="Logica\Alumno.cs" />
+    <Compile Include="UI\Atajos.cs" />
+    <Compile Include="AccesoDatos\Conexion.cs" />
     <Compile Include="Logica\Control.cs" />
-    <Compile Include="Logica\Modelo.cs" />
+    <Compile Include="AccesoDatos\AlumnoBD.cs" />
     <Compile Include="Logica\Session.cs" />
-    <Compile Include="Logica\TipoUsuario.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAyuda.resx">
+    <EmbeddedResource Include="UI\frmAulas.resx">
+      <DependentUpon>frmAulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAyuda.resx">
       <DependentUpon>frmAyuda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInterfaz.resx">
+    <EmbeddedResource Include="UI\frmCambioPassword.resx">
+      <DependentUpon>frmCambioPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmChat.resx">
+      <DependentUpon>frmChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmContactos.resx">
+      <DependentUpon>frmContactos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmInterfaz.resx">
       <DependentUpon>frmInterfaz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPerfil.resx">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,9 +226,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmRegistro.resx">
+    <EmbeddedResource Include="UI\frmRegistro.resx">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="EDChat_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -163,7 +245,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Funciona.ico" />
     <Content Include="Rafiqul-Hassan-Blogger-Chat-2.ico" />
+    <Content Include="Sin título-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
