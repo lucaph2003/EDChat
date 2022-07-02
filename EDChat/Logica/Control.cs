@@ -3,90 +3,82 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EDChat.AccesoDatos;
 
 namespace EDChat.Logica
 {
     class Control
     {
-        public string ctrlRegistro(Docentes docentes)
-        {
-            Modelo modelo = new Modelo();
-            string respuesta = "";
-
-
-            if (string.IsNullOrEmpty(docentes.Nombre) || string.IsNullOrEmpty(docentes.Apellido) || string.IsNullOrEmpty(docentes.Password) || string.IsNullOrEmpty(docentes.ConPassword) || string.IsNullOrEmpty(docentes.Dni))
+            //Metodo para verificar que el usuario sea unico
+            public string ctrlRegistro(Docente docente)
             {
-                respuesta = "Debe llenar todos los campos";
+                //Metodo para verificar que la contrasenia no exista con todos los casos
+                DocenteBD docenteBD = new DocenteBD();
+                string respuesta = "";
 
-
-            }
-            else
-            {
-                if (docentes.Password == docentes.ConPassword)
+                if (string.IsNullOrEmpty(docente.Nombre) || string.IsNullOrEmpty(docente.Apellido) || string.IsNullOrEmpty(docente.Password) || string.IsNullOrEmpty(docente.ConPassword) || string.IsNullOrEmpty(docente.Ci))
                 {
-                    if (modelo.existePassword(docentes.Password))
-                    {
-                        respuesta = "Esta contraseña ya esta usada";
-
-
-                    }
-
-
+                    respuesta = "Debe llenar todos los campos";
                 }
                 else
                 {
-                    respuesta = "Las contraseñas no coinciden";
-
-                }
-
-
-            }
-            return respuesta;
-
-        }
-
-        public string ctrlLogin(string dni, string password)
-        {
-            Modelo modelo = new Modelo();
-            string respuesta = "";
-            Docentes datosDocentes = null;
-
-            if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(password))
-            {
-                respuesta = "Debe llenar todos los campos";
-
-            }
-            else
-            {
-                datosDocentes = modelo.porDni(dni);
-
-                if (datosDocentes == null)
-                {
-                    respuesta = "El usuario no existe";
-
-                }
-                else
-                {
-                    if (datosDocentes.Password != password)
+                    if (docente.Password == docente.ConPassword)
                     {
-                        respuesta = "El usuario o la contraseña no coinciden";
-
+                        if (docenteBD.ExistePassword(docente.Password))
+                        {
+                            respuesta = "Esta contraseña ya esta usada";
+                        }
                     }
                     else
                     {
+                        respuesta = "Las contraseñas no coinciden";
+                    }
+                }
+                return respuesta;
+            }
 
-                        Session.id = datosDocentes.Id;
-                        Session.dni = dni;
-                        Session.nombre = datosDocentes.Nombre;
-                        Session.apellido = datosDocentes.Apellido;
+            //MEtodo para el correcto funcionamiento del login
+            public string ctrlLogin(string ci, string password)
+            {
+                //Metodo para el login, crea la session
+                DocenteBD docenteBD = new DocenteBD();
+                string respuesta = "";
+                Docente datosDocentes = null;
 
+                if (string.IsNullOrEmpty(ci) || string.IsNullOrEmpty(password))
+                {
+                    respuesta = "Debe llenar todos los campos";
+                }
+                else
+                {
+                    datosDocentes = docenteBD.PorDni(ci);
+
+                    if (datosDocentes == null)
+                    {
+                        respuesta = "El usuario no existe";
+                    }
+                    else
+                    {
+                        if (datosDocentes.Password != password)
+                        {
+                            respuesta = "El usuario o la contraseña no coinciden";
+                        }
+                        else
+                        {
+                            Session.id = datosDocentes.Id;
+                            Session.ci = ci;
+                            Session.nombre = datosDocentes.Nombre;
+                            Session.apellido = datosDocentes.Apellido;
+                            Session.password = datosDocentes.Password;
+                            Session.fotoperfil = datosDocentes.FotoPerfil;
                     }
 
 
-                }
+                    }
 
+                }
+                return respuesta;
             }
-            return respuesta;
-        }
+
     }
 }

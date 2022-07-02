@@ -95,77 +95,99 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAulas.cs">
+    <Compile Include="AccesoDatos\AsignaturaBD.cs" />
+    <Compile Include="AccesoDatos\AulaBD.cs" />
+    <Compile Include="AccesoDatos\ChatBD.cs" />
+    <Compile Include="Logica\Asignatura.cs" />
+    <Compile Include="Logica\Aula.cs" />
+    <Compile Include="Logica\Chat.cs" />
+    <Compile Include="UI\Atajos.cs" />
+    <Compile Include="UI\frmAulas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAulas.Designer.cs">
+    <Compile Include="UI\frmAulas.Designer.cs">
       <DependentUpon>frmAulas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAyuda.cs">
+    <Compile Include="UI\frmAyuda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAyuda.Designer.cs">
+    <Compile Include="UI\frmAyuda.Designer.cs">
       <DependentUpon>frmAyuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCalificaciones.cs">
+    <Compile Include="UI\frmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCalificaciones.Designer.cs">
-      <DependentUpon>frmCalificaciones.cs</DependentUpon>
+    <Compile Include="UI\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChats.cs">
+    <Compile Include="UI\frmChats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChats.Designer.cs">
+    <Compile Include="UI\frmChats.Designer.cs">
       <DependentUpon>frmChats.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmContactos.cs">
+    <Compile Include="UI\frmContactos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmContactos.Designer.cs">
+    <Compile Include="UI\frmContactos.Designer.cs">
       <DependentUpon>frmContactos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInterfaz.cs">
+    <Compile Include="UI\frmInterfaz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInterfaz.Designer.cs">
+    <Compile Include="UI\frmInterfaz.Designer.cs">
       <DependentUpon>frmInterfaz.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="UI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPerfil.cs">
+    <Compile Include="UI\frmPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPerfil.Designer.cs">
+    <Compile Include="UI\frmPerfil.Designer.cs">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistro.cs">
+    <Compile Include="UI\frmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistro.Designer.cs">
+    <Compile Include="UI\frmRegistro.Designer.cs">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logica\Conexion.cs" />
+    <Compile Include="AccesoDatos\Conexion.cs" />
     <Compile Include="Logica\Control.cs" />
-    <Compile Include="Logica\Docentes.cs" />
-    <Compile Include="Logica\Modelo.cs" />
+    <Compile Include="Logica\Docente.cs" />
+    <Compile Include="AccesoDatos\DocenteBD.cs" />
     <Compile Include="Logica\Session.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmChats.resx">
+    <EmbeddedResource Include="UI\frmAulas.resx">
+      <DependentUpon>frmAulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAyuda.resx">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmChats.resx">
       <DependentUpon>frmChats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInterfaz.resx">
+    <EmbeddedResource Include="UI\frmContactos.resx">
+      <DependentUpon>frmContactos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmInterfaz.resx">
       <DependentUpon>frmInterfaz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistro.resx">
+    <EmbeddedResource Include="UI\frmPerfil.resx">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmRegistro.resx">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -194,5 +216,6 @@
   <ItemGroup>
     <Content Include="logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
